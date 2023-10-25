@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Images</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        background-color: black;
+
+    }
+
+    img {
+
+        max-width: 100%;
+        height: 95%;
+        border: 1px solid #ddd;
+        padding: 0px;
+        background-color: deepskyblue;
+        border-radius: 5px;
+        opacity: 1;
+        filter: grayscale(0);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        height: 70vh;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    span {
+        display: block;
+        padding: 8px;
+        background-color: white;
+        border-radius: 5px;
+
+    }
+
+    .topleft {
+        position: absolute;
+        padding: 5px;
+        top: 85px;
+        color: white;
+        font-size: 18px;
+    }
+
+    .overlay {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background-color: skyblue;
+        height: 0;
+        top: 12.6vh;
+        width: 36.9vh;
+        transition: height 1s;
+        border-radius: 5px;
+    }
+
+    /* Efek hover untuk perangkat dengan input mouse (misalnya PC) */
+    .container:hover .overlay {
+        height: 467px;
+    }
+
+    .text {
+        font-size: 20px;
+        font-family: monospace;
+        color: white;
+        padding: 2px;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        /* Efek hover hanya untuk perangkat sentuh (misalnya perangkat seluler) */
+        @media (hover: none) {
+            .container:hover .overlay {
+                height: 410px;
+                animation: hideOverlay 1s;
+                /* Animasi untuk kembali ke posisi awal */
+            }
+        }
+
+        @keyframes hideOverlay {
+            0% {
+                height: 0px;
+            }
+
+            100% {
+                height: 410px;
+            }
+        }
+
+        .topleft {
+            position: absolute;
+            top: 70px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .text {
+            font-size: 17px;
+            font-family: monospace;
+            color: white;
+            padding: 2px;
+        }
+
+
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span>REM</span>
+        <img src="Rem.png" alt="Rem">
+        <div class="topleft">レム </div>
+        <div class="overlay">
+            <div class="text">
+                Rem's name is derived from the German word "Rem", which is an abbreviation of "Reinigungs Engel", meaning "Angel of Purification". The name was chosen by the author of Re:Zero, Tappei Nagatsuki, because he wanted a name that was fitting for a character who is shy and reserved, yet also strong and loyal.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
